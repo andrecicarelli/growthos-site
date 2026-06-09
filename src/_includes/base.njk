@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>{% if title %}{{ title }} — {% endif %}{{ site.name }}</title>
+  <meta name="description" content="{{ description or site.description }}" />
+  <link rel="canonical" href="{{ site.url }}{{ page.url }}" />
+
+  <meta property="og:title" content="{% if title %}{{ title }} — {% endif %}{{ site.name }}" />
+  <meta property="og:description" content="{{ description or site.description }}" />
+  <meta property="og:url" content="{{ site.url }}{{ page.url }}" />
+  <meta property="og:type" content="website" />
+
+  <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" />
+  <link rel="stylesheet" href="/assets/style.css?v={{ build.ts }}" />
+</head>
+<body>
+
+<nav class="site-nav" id="site-nav" aria-label="Main navigation">
+  <div class="nav-inner">
+    <a href="/" class="nav-logo">
+      <span class="nav-logo-icon">&lt;/&gt;</span>
+      <span class="nav-logo-name">GrowthOS</span>
+    </a>
+    <div class="nav-links">
+      <a href="#services" class="nav-link">Services</a>
+      <a href="#process" class="nav-link">Process</a>
+      <a href="#results" class="nav-link">Results</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </div>
+    <a href="#contact" class="btn btn-primary nav-cta">Get a quote</a>
+    <button class="nav-hamburger" id="nav-hamburger" aria-label="Open menu" aria-expanded="false" aria-controls="nav-mobile-menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="nav-mobile-menu" id="nav-mobile-menu" aria-hidden="true">
+    <a href="#services" class="nav-mobile-link">Services</a>
+    <a href="#process" class="nav-mobile-link">Process</a>
+    <a href="#results" class="nav-mobile-link">Results</a>
+    <a href="#contact" class="nav-mobile-link">Contact</a>
+    <a href="#contact" class="btn btn-primary nav-mobile-cta">Get a quote</a>
+  </div>
+</nav>
+
+{{ content | safe }}
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <a href="/" class="footer-logo">
+        <span class="footer-logo-icon">&lt;/&gt;</span>
+        GrowthOS
+      </a>
+      <ul class="footer-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#process">Process</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="mailto:{{ site.email }}">{{ site.email }}</a></li>
+      </ul>
+    </div>
+    <div class="footer-bottom">
+      <p class="footer-copy">© {{ build.year }} GrowthOS</p>
+      <div class="footer-status">
+        <span class="status-dot"></span>
+        Available for new projects
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="/assets/main.js?v={{ build.ts }}" defer></script>
+</body>
+</html>
