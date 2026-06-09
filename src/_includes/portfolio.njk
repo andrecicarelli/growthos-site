@@ -10,6 +10,9 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@500;600&display=swap">
   <style>
+    /* overflow:hidden no body quebra position:fixed — clip preserva o comportamento sem criar scroll container */
+    html, body { overflow-x: clip !important; }
+
     .portfolio-badge {
       position: fixed;
       bottom: 24px;
