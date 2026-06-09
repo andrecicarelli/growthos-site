@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="{{ htmlLang or 'en' }}">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ description }}" />
+  <meta name="robots" content="noindex" />
+  {{ headExtra | safe if headExtra }}
+</head>
+<body>
+
+  <div class="portfolio-banner">
+    <span>Portfolio example</span>
+    <a href="/" target="_blank" rel="noopener">Built by GrowthOS →</a>
+  </div>
+
+  <style>
+    .portfolio-banner {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      z-index: 9999;
+      background: #39FF87;
+      color: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      padding: 8px 20px;
+      font-family: system-ui, sans-serif;
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+    .portfolio-banner a {
+      color: #000;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+    }
+  </style>
+
+  {{ content | safe }}
+
+  {{ footerExtra | safe if footerExtra }}
+</body>
+</html>
