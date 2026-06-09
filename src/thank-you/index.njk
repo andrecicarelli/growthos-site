@@ -1,0 +1,78 @@
+---
+layout: base.njk
+title: "Message received"
+description: "Thanks for reaching out. We'll be in touch within 24 hours."
+---
+
+<main class="ty-page">
+  <div class="ty-card reveal">
+    <div class="ty-icon">
+      <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <circle cx="24" cy="24" r="23" stroke="var(--primary)" stroke-width="2"/>
+        <path d="M14 24.5L21 31.5L34 17" stroke="var(--primary)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+    </div>
+    <h1 class="ty-heading">Message received.</h1>
+    <p class="ty-body">We'll review your project and get back to you within <strong>24 hours</strong>.<br>Check your inbox — we'll reach out at the email you provided.</p>
+    <a href="/" class="btn btn-primary ty-btn">Back to home</a>
+  </div>
+</main>
+
+<style>
+.ty-page {
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 80px 24px;
+}
+
+.ty-card {
+  max-width: 480px;
+  width: 100%;
+  text-align: center;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 56px 40px 48px;
+}
+
+.ty-icon {
+  margin-bottom: 28px;
+}
+
+.ty-icon svg {
+  filter: drop-shadow(0 0 12px rgba(57, 255, 135, 0.35));
+}
+
+.ty-heading {
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+  font-weight: 800;
+  color: var(--text);
+  margin-bottom: 16px;
+  letter-spacing: -0.03em;
+  line-height: 1.15;
+}
+
+.ty-body {
+  color: var(--text-muted);
+  font-size: 1rem;
+  line-height: 1.65;
+  margin-bottom: 36px;
+}
+
+.ty-body strong {
+  color: var(--primary);
+  font-weight: 600;
+}
+
+.ty-btn {
+  display: inline-block;
+}
+
+@media (max-width: 480px) {
+  .ty-card {
+    padding: 40px 24px 36px;
+  }
+}
+</style>
