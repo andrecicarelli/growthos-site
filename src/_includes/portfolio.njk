@@ -7,38 +7,37 @@
   <meta name="description" content="{{ description }}" />
   <meta name="robots" content="noindex" />
   {{ headExtra | safe if headExtra }}
+  <style>
+    .portfolio-badge {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 9999;
+      background: rgba(0, 0, 0, 0.75);
+      color: #fff;
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 20px;
+      padding: 6px 14px;
+      font-size: 0.72rem;
+      font-family: system-ui, sans-serif;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+    .portfolio-badge:hover { opacity: 0.85; }
+    .portfolio-badge span { color: #39FF87; }
+  </style>
 </head>
 <body>
 
-  <div class="portfolio-banner">
-    <span>Portfolio example</span>
-    <a href="/" target="_blank" rel="noopener">Built by GrowthOS →</a>
-  </div>
-
-  <style>
-    .portfolio-banner {
-      position: fixed;
-      bottom: 0; left: 0; right: 0;
-      z-index: 9999;
-      background: #39FF87;
-      color: #000;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 16px;
-      padding: 8px 20px;
-      font-family: system-ui, sans-serif;
-      font-size: 0.8rem;
-      font-weight: 600;
-    }
-    .portfolio-banner a {
-      color: #000;
-      text-decoration: underline;
-      text-underline-offset: 2px;
-    }
-  </style>
-
   {{ content | safe }}
+
+  <a href="https://growthos.com.br" target="_blank" rel="noopener" class="portfolio-badge">
+    Built by <span>GrowthOS</span>
+  </a>
 
   {{ footerExtra | safe if footerExtra }}
 </body>
